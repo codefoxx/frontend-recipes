@@ -1,2 +1,5 @@
 #!/usr/bin/env sh
-npm --prefix apps/react-recipes run lint && npm --prefix apps/react-recipes run build
+
+npm --prefix apps/react-recipes run lint &&
+npm --prefix apps/react-recipes run format:check &&
+npm --prefix apps/react-recipes run build
