@@ -1,4 +1,4 @@
-import RecipePageLayout from "../RecipePageLayout";
+import RecipePageLayout from '../RecipePageLayout'
 
 export default function DebouncedSearchPage() {
   return (
@@ -8,5 +8,5 @@ export default function DebouncedSearchPage() {
     >
       <p>Implementation coming soon.</p>
     </RecipePageLayout>
-  );
+  )
 }
