@@ -1,9 +1,10 @@
 import { createBrowserRouter } from 'react-router-dom'
-import MainLayout from '../app/layout/MainLayout'
-import HomePage from '../pages/HomePage'
-import DebouncedSearchPage from '../recipes/debounced-search/DebouncedSearchPage'
-import ProtectedRoutePage from '../recipes/protected-route/ProtectedRoutePage'
-import PermissionUiPage from '../recipes/permission-ui/PermissionUiPage'
+
+import MainLayout from '@/app/layout/MainLayout'
+import HomePage from '@/pages/HomePage'
+import DebouncedSearchPage from '@/recipes/debounced-search/pages/DebouncedSearchPage'
+import PermissionUiPage from '@/recipes/permission-ui/PermissionUiPage'
+import ProtectedRoutePage from '@/recipes/protected-route/ProtectedRoutePage'
 
 export const router = createBrowserRouter([
   {

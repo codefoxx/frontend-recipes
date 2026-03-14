@@ -8,6 +8,19 @@
     "types": ["vite/client"],
     "skipLibCheck": true,
 
+    // Allows absolute imports using the '@' prefix.
+    // Example:
+    // import RecipeSection from '@/components/RecipeSection'
+    // instead of:
+    // import RecipeSection from '../../../components/RecipeSection'
+    // NOTE:
+    // The '@' alias must also be configured in vite.config.ts
+    // to ensure the bundler resolves the same paths as TypeScript.
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
