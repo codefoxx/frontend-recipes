@@ -1,5 +1,6 @@
+import type { RecipeSectionDefinition } from '@shared/types'
+
 import MarkdownContent from '@/components/MarkdownContent'
-import type { RecipeSectionDefinition } from '@/recipes/types/RecipeSectionDefinition'
 
 type RecipeSectionProps = {
   section: RecipeSectionDefinition

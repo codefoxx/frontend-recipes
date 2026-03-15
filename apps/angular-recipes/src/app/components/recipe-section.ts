@@ -1,6 +1,6 @@
 import { Component, input } from '@angular/core'
 
-import { RecipeSectionDefinition } from '@/app/recipes/types/recipe-section-definition'
+import { RecipeSectionDefinition } from '@shared/types'
 import { MarkdownContentComponent } from './markdown-content'
 
 @Component({

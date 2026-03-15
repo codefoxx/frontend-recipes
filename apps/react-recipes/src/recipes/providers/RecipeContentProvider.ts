@@ -1,4 +1,4 @@
-import type { RecipeDefinition } from '../types/RecipeDefinition'
+import type { RecipeDefinition } from '@shared/types'
 
 export interface RecipeContentProvider {
   getRecipes(): Promise<RecipeDefinition[]>

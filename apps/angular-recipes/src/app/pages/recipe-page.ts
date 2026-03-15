@@ -1,19 +1,23 @@
 import { Component, computed, inject } from '@angular/core'
-import { ActivatedRoute } from '@angular/router'
 import { toSignal } from '@angular/core/rxjs-interop'
+import { ActivatedRoute } from '@angular/router'
 import { map, switchMap } from 'rxjs'
 
 import { RecipePageLayoutComponent } from '@/app/components/recipe-page-layout'
 import { RecipeSectionComponent } from '@/app/components/recipe-section'
 import { PlaceholderDemoComponent } from '@/app/recipes/demos/placeholder-demo'
-import { RecipeContentProvider } from '@/app/recipes/providers/recipe-content-provider'
 import { demoRegistry } from '@/app/recipes/registry/demo-registry'
-import { RecipeDefinition } from '@/app/recipes/types/recipe-definition'
+import type { RecipeDefinition } from '@shared/types'
+import { RecipeService } from '../recipes/services/recipe-service'
 
 @Component({
   standalone: true,
   selector: 'app-recipe-page',
-  imports: [RecipePageLayoutComponent, RecipeSectionComponent, PlaceholderDemoComponent],
+  imports: [
+    RecipePageLayoutComponent,
+    RecipeSectionComponent,
+    PlaceholderDemoComponent,
+  ],
   template: `
     @if (recipe(); as currentRecipe) {
       <app-recipe-page-layout
@@ -34,16 +38,15 @@ import { RecipeDefinition } from '@/app/recipes/types/recipe-definition'
       <p>Loading recipe...</p>
     }
   `,
-  providers: [RecipeContentProvider],
 })
 export class RecipePageComponent {
   private readonly route = inject(ActivatedRoute)
-  private readonly recipeContentProvider = inject(RecipeContentProvider)
+  private readonly recipeService = inject(RecipeService)
 
   public readonly recipe = toSignal(
     this.route.paramMap.pipe(
       map((params) => params.get('slug')),
-      switchMap((slug) => this.recipeContentProvider.getRecipeBySlug(slug ?? ''))
+      switchMap((slug) => this.recipeService.getRecipeBySlug(slug ?? ''))
     ),
     { initialValue: null as RecipeDefinition | null }
   )

@@ -1,3 +1,4 @@
+import type { RecipeDefinition } from '@shared/types'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
@@ -5,7 +6,6 @@ import RecipeSection from '@/components/RecipeSection'
 import { recipeContentProvider } from '@/recipes/providers'
 import RecipePageLayout from '@/recipes/RecipePageLayout'
 import { demoRegistry } from '@/recipes/registry/demoRegistry'
-import type { RecipeDefinition } from '@/recipes/types/RecipeDefinition'
 
 export default function RecipePage() {
   const { slug } = useParams<{ slug: string }>()

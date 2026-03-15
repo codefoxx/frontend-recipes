@@ -1,8 +1,8 @@
 import { Component, inject } from '@angular/core'
-import { RouterLink } from '@angular/router'
 import { toSignal } from '@angular/core/rxjs-interop'
+import { RouterLink } from '@angular/router'
 
-import { RecipeContentProvider } from '@/app/recipes/providers/recipe-content-provider'
+import { RecipeService } from '../recipes/services/recipe-service'
 
 @Component({
   standalone: true,
@@ -19,7 +19,8 @@ import { RecipeContentProvider } from '@/app/recipes/providers/recipe-content-pr
 
       <section class="hero">
         <p class="subtitle">
-          Practical TypeScript / Angular patterns for recurring frontend problems.
+          Practical TypeScript / Angular patterns for recurring frontend
+          problems.
         </p>
 
         <div class="recipes">
@@ -33,12 +34,12 @@ import { RecipeContentProvider } from '@/app/recipes/providers/recipe-content-pr
       </section>
     </div>
   `,
-  providers: [RecipeContentProvider],
+  providers: [],
 })
 export class HomePageComponent {
-  private readonly recipeContentProvider = inject(RecipeContentProvider)
+  private readonly recipeService = inject(RecipeService)
 
-  public readonly recipes = toSignal(this.recipeContentProvider.getRecipes(), {
+  public readonly recipes = toSignal(this.recipeService.getRecipes(), {
     initialValue: [],
   })
 }

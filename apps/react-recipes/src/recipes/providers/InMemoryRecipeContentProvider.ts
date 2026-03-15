@@ -1,5 +1,6 @@
-import { recipes } from '../content/recipes'
-import type { RecipeDefinition } from '../types/RecipeDefinition'
+import { recipes } from '@shared/content/recipes'
+import type { RecipeDefinition } from '@shared/types'
+
 import type { RecipeContentProvider } from './RecipeContentProvider'
 
 function shouldShowRecipeInListing(recipe: RecipeDefinition): boolean {

@@ -1,4 +1,4 @@
-import { RecipeDemoKey } from '@/app/recipes/types/recipe-demo-key'
+import { RecipeDemoKey } from '@shared/types'
 
 export const demoRegistry: Record<RecipeDemoKey, string> = {
   'debounced-search': 'Angular debounced search demo will be added next.',

@@ -1,9 +1,9 @@
+import type { RecipeDefinition } from '@shared/types'
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import logo from '@/assets/logo.svg'
 import { recipeContentProvider } from '@/recipes/providers'
-import type { RecipeDefinition } from '@/recipes/types/RecipeDefinition'
 
 export default function HomePage() {
   const [recipes, setRecipes] = useState<RecipeDefinition[]>([])

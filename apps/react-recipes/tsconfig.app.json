@@ -18,7 +18,8 @@
     // to ensure the bundler resolves the same paths as TypeScript.
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@shared/*": ["../../shared/*"]
     },
 
     /* Bundler mode */
@@ -37,5 +38,5 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src"]
+  "include": ["src", "../../shared"]
 }
