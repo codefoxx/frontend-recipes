@@ -1,11 +1,11 @@
-import type { ReactNode } from "react";
-import { Link } from "react-router-dom";
+import type { ReactNode } from 'react'
+import { Link } from 'react-router-dom'
 
 type RecipePageLayoutProps = {
-  title: string;
-  description?: string;
-  children?: ReactNode;
-};
+  title: string
+  description?: string
+  children?: ReactNode
+}
 
 export default function RecipePageLayout({
   title,
@@ -27,5 +27,5 @@ export default function RecipePageLayout({
         <div className="recipe-page__content">{children}</div>
       </div>
     </section>
-  );
+  )
 }

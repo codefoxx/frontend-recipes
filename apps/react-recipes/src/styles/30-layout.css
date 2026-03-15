@@ -1,0 +1,19 @@
+/* App shell */
+.app {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+/* Main page content */
+.content {
+  flex: 1;
+}
+
+/* Global footer */
+.footer {
+  padding: var(--space-4);
+  text-align: center;
+  color: var(--text-soft);
+  font-size: 0.9rem;
+}
