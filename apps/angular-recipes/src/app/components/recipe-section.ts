@@ -1,0 +1,22 @@
+import { Component, input } from '@angular/core'
+
+import { RecipeSectionDefinition } from '@/app/recipes/types/recipe-section-definition'
+import { MarkdownContentComponent } from './markdown-content'
+
+@Component({
+  standalone: true,
+  selector: 'app-recipe-section',
+  imports: [MarkdownContentComponent],
+  template: `
+    <section class="recipe-section">
+      <h2 class="recipe-section__title">{{ section().title }}</h2>
+      <div class="recipe-section__content">
+        <app-markdown-content [content]="section().content" />
+      </div>
+      <ng-content />
+    </section>
+  `,
+})
+export class RecipeSectionComponent {
+  public readonly section = input.required<RecipeSectionDefinition>()
+}
