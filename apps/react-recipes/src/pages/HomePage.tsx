@@ -1,9 +1,17 @@
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import logo from '@/assets/logo.svg'
-import { recipes } from '@/recipes/registry'
+import { recipeContentProvider } from '@/recipes/providers'
+import type { RecipeDefinition } from '@/recipes/types/RecipeDefinition'
 
 export default function HomePage() {
+  const [recipes, setRecipes] = useState<RecipeDefinition[]>([])
+
+  useEffect(() => {
+    recipeContentProvider.getRecipes().then(setRecipes)
+  }, [])
+
   return (
     <div>
       <header className="header">
@@ -25,7 +33,7 @@ export default function HomePage() {
               to={`/recipes/${recipe.slug}`}
             >
               <h3>{recipe.title}</h3>
-              <p>{recipe.description}</p>
+              <p>{recipe.summary}</p>
             </Link>
           ))}
         </div>

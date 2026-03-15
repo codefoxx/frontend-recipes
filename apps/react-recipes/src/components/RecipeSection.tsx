@@ -1,25 +1,22 @@
-import type { ReactNode } from 'react'
+import MarkdownContent from '@/components/MarkdownContent'
+import type { RecipeSectionDefinition } from '@/recipes/types/RecipeSectionDefinition'
 
 type RecipeSectionProps = {
-  title: string
-  description?: string
-  children: ReactNode
+  section: RecipeSectionDefinition
+  children?: React.ReactNode
 }
 
 export default function RecipeSection({
-  title,
-  description,
+  section,
   children,
 }: RecipeSectionProps) {
   return (
     <section className="recipe-section">
-      <h2 className="recipe-section-title">{title}</h2>
-
-      {description && (
-        <p className="recipe-section-description">{description}</p>
-      )}
-
-      <div className="recipe-section-content">{children}</div>
+      <h2 className="recipe-section__title">{section.title}</h2>
+      <div className="recipe-section__content">
+        <MarkdownContent content={section.content} />
+      </div>
+      {children}
     </section>
   )
 }

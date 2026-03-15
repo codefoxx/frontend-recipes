@@ -1,16 +1,18 @@
+/* Home page intro */
 .header {
+  padding: var(--space-16) var(--space-4) var(--space-8);
   text-align: center;
-  padding: 4rem 1rem 2rem;
 }
 
+/* Brand halo around logo */
 .hero-brand {
   display: flex;
   align-items: center;
   justify-content: center;
   width: clamp(140px, 16vw, 200px);
   height: clamp(140px, 16vw, 200px);
-  margin: 0 auto 2rem;
-  border-radius: 999px;
+  margin: 0 auto var(--space-8);
+  border-radius: var(--radius-pill);
   overflow: visible;
   background: radial-gradient(
     circle,
@@ -21,52 +23,57 @@
   );
 }
 
+/* Brand logo image */
 .logo {
   width: 200px;
   height: auto;
-  display: block;
 }
 
 .header h1 {
+  margin: 0;
   font-size: clamp(2.6rem, 6vw, 4rem);
   font-weight: 650;
   letter-spacing: -0.02em;
 }
 
+/* Home page main content */
 .hero {
+  padding: var(--space-4) var(--space-4) var(--space-16);
   text-align: center;
-  padding: 1rem 1rem 4rem;
 }
 
+/* Intro copy under title */
 .subtitle {
   max-width: 680px;
-  margin: 0 auto 3rem;
+  margin: 0 auto var(--space-12);
   color: var(--text-soft);
   font-size: 1.125rem;
   line-height: 1.6;
 }
 
+/* Recipe card grid */
 .recipes {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.5rem;
-  max-width: 980px;
+  gap: var(--space-6);
+  max-width: var(--content-width);
   margin: 0 auto;
 }
 
+/* Individual recipe card */
 .recipe-card {
-  background: var(--bg-soft);
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: var(--radius-md);
+  background: var(--bg-soft);
   padding: 1.4rem;
+  color: inherit;
   text-align: left;
   text-decoration: none;
-  color: inherit;
   transition:
-    transform 0.15s ease,
-    border-color 0.15s ease,
-    box-shadow 0.15s ease,
-    background-color 0.15s ease;
+    transform var(--duration-fast) ease,
+    border-color var(--duration-fast) ease,
+    box-shadow var(--duration-fast) ease,
+    background-color var(--duration-fast) ease;
 }
 
 .recipe-card:hover {
@@ -81,7 +88,7 @@
 }
 
 .recipe-card h3 {
-  margin: 0 0 1rem;
+  margin: 0 0 var(--space-4);
   font-size: 1.5rem;
   line-height: 1.3;
 }

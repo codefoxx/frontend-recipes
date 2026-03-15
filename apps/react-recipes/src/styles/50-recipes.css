@@ -1,0 +1,109 @@
+/* Recipe page outer spacing */
+.recipe-page {
+  padding: var(--space-4) var(--space-4) var(--space-16);
+}
+
+/* Recipe content width */
+.recipe-page__container {
+  max-width: var(--content-width);
+  margin: 0 auto;
+}
+
+/* Back navigation link */
+.recipe-page__back {
+  display: inline-block;
+  margin-bottom: var(--space-8);
+  color: var(--text-soft);
+  text-decoration: none;
+  transition: color var(--duration-fast) ease;
+}
+
+.recipe-page__back:hover {
+  color: var(--accent);
+}
+
+.recipe-page__back:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Recipe hero section */
+.recipe-page__header {
+  margin-bottom: var(--space-8);
+}
+
+.recipe-page__header h2 {
+  margin: 0 0 var(--space-4);
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  line-height: 1.15;
+}
+
+.recipe-page__header p {
+  max-width: var(--content-width-narrow);
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* Recipe content card */
+.recipe-page__content {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(254, 202, 7, 0.03),
+      rgba(244, 129, 31, 0.015) 18%,
+      transparent 45%
+    ),
+    var(--bg-soft);
+  box-shadow: var(--shadow);
+  padding: var(--space-8);
+}
+
+/* Generic recipe section */
+.recipe-section {
+  margin-top: var(--space-16);
+}
+
+.recipe-section:first-child {
+  margin-top: 0;
+}
+
+/* Section heading */
+.recipe-section__title {
+  margin: 0 0 1.25rem;
+  color: var(--accent-strong);
+  font-size: clamp(1.75rem, 2.5vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* Demo wrapper */
+.recipe-demo {
+  margin-top: var(--space-6);
+}
+
+/* Generic placeholder block */
+.recipe-demo-placeholder {
+  border: 1px dashed var(--surface-border);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  padding: var(--space-6);
+  color: var(--text-soft);
+}
+
+@media (max-width: 640px) {
+  .recipe-page {
+    padding-inline: var(--space-3);
+  }
+
+  .recipe-page__content {
+    padding: var(--space-6);
+  }
+
+  .recipe-section {
+    margin-top: var(--space-12);
+  }
+}
