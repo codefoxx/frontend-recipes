@@ -6,7 +6,7 @@ export const debouncedSearchRecipe: RecipeDefinition = {
   summary:
     'How to avoid wasteful requests, reduce UI noise, and keep search interactions responsive while users type.',
   category: 'Forms & Input',
-  status: 'in-progress',
+  status: 'complete',
   demoKey: 'debounced-search',
   sections: [
     {
