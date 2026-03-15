@@ -13,7 +13,7 @@ export const permissionBasesUiRecipe: RecipeDefinition = {
       id: 'problem',
       title: 'The Problem',
       kind: 'problem',
-      body: ['coming soon'],
+      content: 'coming soon',
     },
   ],
 }
