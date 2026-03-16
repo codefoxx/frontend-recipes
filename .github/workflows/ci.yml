@@ -10,7 +10,8 @@ on:
       - main
 
 jobs:
-  build:
+  react:
+    name: React app
     runs-on: ubuntu-latest
 
     defaults:
@@ -24,7 +25,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: "lts/*"
+          node-version: 'lts/*'
           cache: npm
           cache-dependency-path: apps/react-recipes/package-lock.json
 
@@ -36,6 +37,43 @@ jobs:
 
       - name: Check formatting
         run: npm run format:check
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Build
+        run: npm run build
+
+  angular:
+    name: Angular app
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: apps/angular-recipes
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
+          cache: npm
+          cache-dependency-path: apps/angular-recipes/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Check formatting
+        run: npm run format:check
+
+      - name: Typecheck
+        run: npm run typecheck
 
       - name: Build
         run: npm run build

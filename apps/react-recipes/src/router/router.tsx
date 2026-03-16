@@ -4,6 +4,9 @@ import MainLayout from '@/app/layout/MainLayout'
 import HomePage from '@/pages/HomePage'
 import RecipePage from '@/pages/RecipePage'
 
+/**
+ * Route tree shared by the React application.
+ */
 export const router = createBrowserRouter([
   {
     element: <MainLayout />,

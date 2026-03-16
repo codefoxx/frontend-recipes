@@ -1,5 +1,8 @@
 import { Component } from '@angular/core'
 
+/**
+ * Top-level layout shared by all Angular routes.
+ */
 @Component({
   standalone: true,
   selector: 'app-main-layout',

@@ -4,6 +4,9 @@ import { provideRouter } from '@angular/router'
 import { routes } from '@/app/router/routes'
 import { provideRecipeContent } from './recipes/providers/provide-recipe-content'
 
+/**
+ * Central application composition root for the Angular app.
+ */
 export const appConfig: ApplicationConfig = {
   providers: [provideRouter(routes), ...provideRecipeContent()],
 }

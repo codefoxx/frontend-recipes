@@ -1,18 +1,21 @@
-import type { RecipeDefinition } from "@shared/types/recipe-definition";
+import type { RecipeDefinition } from '@shared/types'
 
+/**
+ * Fully implemented recipe used as the reference implementation in both apps.
+ */
 export const debouncedSearchRecipe: RecipeDefinition = {
-  slug: "debounced-search",
-  title: "Debounced Search",
+  slug: 'debounced-search',
+  title: 'Debounced Search',
   summary:
-    "How to avoid wasteful requests, reduce UI noise, and keep search interactions responsive while users type.",
-  category: "Forms & Input",
-  status: "complete",
-  demoKey: "debounced-search",
+    'How to avoid wasteful requests, reduce UI noise, and keep search interactions responsive while users type.',
+  category: 'Forms & Input',
+  status: 'complete',
+  demoKey: 'debounced-search',
   sections: [
     {
-      id: "problem",
-      title: "The Problem",
-      kind: "problem",
+      id: 'problem',
+      title: 'The Problem',
+      kind: 'problem',
       content: `
 A naive search experience often sends a new request on **every keystroke**.
 
@@ -29,9 +32,9 @@ The result is a search interaction that feels busy, expensive, and less stable t
       `.trim(),
     },
     {
-      id: "baseline",
-      title: "Baseline",
-      kind: "baseline",
+      id: 'baseline',
+      title: 'Baseline',
+      kind: 'baseline',
       content: `
 The most straightforward implementation binds the input value directly to a fetch call. Each change in the text field immediately triggers a new search request.
 
@@ -48,9 +51,9 @@ This baseline is useful because it makes the problem visible very quickly. It al
       `.trim(),
     },
     {
-      id: "pitfalls",
-      title: "Why this becomes problematic",
-      kind: "pitfall",
+      id: 'pitfalls',
+      title: 'Why this becomes problematic',
+      kind: 'pitfall',
       content: `
 The core issue is not just "too many requests". The bigger problem is that the UI becomes coupled to the raw speed of user input.
 
@@ -65,9 +68,9 @@ This is why debouncing matters. It is not only a performance optimization. It is
       `.trim(),
     },
     {
-      id: "improvement",
-      title: "Improved Implementation",
-      kind: "improvement",
+      id: 'improvement',
+      title: 'Improved Implementation',
+      kind: 'improvement',
       content: `
 A debounced search waits for a short pause in typing before sending the request.
 
@@ -84,9 +87,9 @@ This produces a search experience that feels calmer, more intentional, and more 
       `.trim(),
     },
     {
-      id: "solution",
-      title: "What the solution should achieve",
-      kind: "solution",
+      id: 'solution',
+      title: 'What the solution should achieve',
+      kind: 'solution',
       content: `
 A good debounced search implementation should do more than "wait a bit before fetching".
 
@@ -102,9 +105,9 @@ In a production codebase, I would usually move the timing behavior into a dedica
       `.trim(),
     },
     {
-      id: "demo",
-      title: "Live Demo",
-      kind: "demo",
+      id: 'demo',
+      title: 'Live Demo',
+      kind: 'demo',
       content: `
 The demo below contrasts a naive search with a debounced implementation.
 
@@ -118,9 +121,9 @@ That comparison makes it easier to see why debouncing is not a micro-optimizatio
       `.trim(),
     },
     {
-      id: "takeaway",
-      title: "Takeaway",
-      kind: "takeaway",
+      id: 'takeaway',
+      title: 'Takeaway',
+      kind: 'takeaway',
       content: `
 Debouncing is a small technique with outsized impact.
 
@@ -130,4 +133,4 @@ That makes it a good example of frontend engineering beyond just rendering compo
       `.trim(),
     },
   ],
-};
+}

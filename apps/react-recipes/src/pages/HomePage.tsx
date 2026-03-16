@@ -3,13 +3,16 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import logo from '@/assets/logo.svg'
-import { recipeContentProvider } from '@/recipes/providers'
+import { recipeService } from '@/recipes/services'
 
+/**
+ * Landing page that lists all visible recipes for the React application.
+ */
 export default function HomePage() {
   const [recipes, setRecipes] = useState<RecipeDefinition[]>([])
 
   useEffect(() => {
-    recipeContentProvider.getRecipes().then(setRecipes)
+    recipeService.getRecipes().then(setRecipes)
   }, [])
 
   return (

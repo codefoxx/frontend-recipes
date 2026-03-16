@@ -3,6 +3,9 @@ import { RouterOutlet } from '@angular/router'
 
 import { MainLayoutComponent } from '@/app/layout/main-layout'
 
+/**
+ * Root component for the Angular application.
+ */
 @Component({
   standalone: true,
   selector: 'app-root',

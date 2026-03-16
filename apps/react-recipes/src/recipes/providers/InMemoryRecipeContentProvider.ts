@@ -11,6 +11,10 @@ function shouldShowRecipeInListing(recipe: RecipeDefinition): boolean {
   return import.meta.env.VITE_SHOW_INCOMPLETE_RECIPES === 'true'
 }
 
+/**
+ * Simple in-memory implementation used while recipes live as shared source
+ * files inside the monorepo.
+ */
 export class InMemoryRecipeContentProvider implements RecipeContentProvider {
   public async getRecipes(): Promise<RecipeDefinition[]> {
     return recipes.filter(shouldShowRecipeInListing)

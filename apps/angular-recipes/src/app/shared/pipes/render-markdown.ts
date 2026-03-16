@@ -11,6 +11,10 @@ function formatInlineMarkdown(value: string): string {
     .replace(/`(.+?)`/g, '<code>$1</code>')
 }
 
+/**
+ * Intentionally small markdown renderer that supports only the constructs used
+ * by the shared recipe content.
+ */
 export function renderMarkdown(markdown: string): string {
   const lines = markdown.split(/\r?\n/)
   const html: string[] = []

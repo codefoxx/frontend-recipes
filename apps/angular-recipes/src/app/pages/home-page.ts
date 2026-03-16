@@ -2,8 +2,11 @@ import { Component, inject } from '@angular/core'
 import { toSignal } from '@angular/core/rxjs-interop'
 import { RouterLink } from '@angular/router'
 
-import { RecipeService } from '../recipes/services/recipe-service'
+import { RecipeService } from '@/app/recipes/services/recipe-service'
 
+/**
+ * Landing page that lists all visible recipes for the Angular application.
+ */
 @Component({
   standalone: true,
   selector: 'app-home-page',
@@ -34,7 +37,6 @@ import { RecipeService } from '../recipes/services/recipe-service'
       </section>
     </div>
   `,
-  providers: [],
 })
 export class HomePageComponent {
   private readonly recipeService = inject(RecipeService)

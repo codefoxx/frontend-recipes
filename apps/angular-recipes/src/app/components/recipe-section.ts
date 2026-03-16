@@ -1,8 +1,12 @@
 import { Component, input } from '@angular/core'
 
-import { RecipeSectionDefinition } from '@shared/types'
+import type { RecipeSectionDefinition } from '@shared/types'
+
 import { MarkdownContentComponent } from './markdown-content'
 
+/**
+ * Renders a single recipe section and optionally hosts a demo component.
+ */
 @Component({
   standalone: true,
   selector: 'app-recipe-section',

@@ -5,6 +5,9 @@ type MarkdownContentProps = {
   content: string
 }
 
+/**
+ * Renders shared recipe markdown using the richer React markdown stack.
+ */
 export default function MarkdownContent({ content }: MarkdownContentProps) {
   return (
     <div className="markdown-content">

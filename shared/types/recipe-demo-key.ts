@@ -1,4 +1,7 @@
+/**
+ * Stable identifier used to resolve the framework-specific demo for a recipe.
+ */
 export type RecipeDemoKey =
   | 'debounced-search'
-  | 'protected-route'
   | 'permission-based-ui'
+  | 'protected-route'

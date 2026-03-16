@@ -6,10 +6,12 @@ import { map, switchMap } from 'rxjs'
 import { RecipePageLayoutComponent } from '@/app/components/recipe-page-layout'
 import { RecipeSectionComponent } from '@/app/components/recipe-section'
 import { PlaceholderDemoComponent } from '@/app/recipes/demos/placeholder-demo'
-import { demoRegistry } from '@/app/recipes/registry/demo-registry'
+import { RecipeService } from '@/app/recipes/services/recipe-service'
 import type { RecipeDefinition } from '@shared/types'
-import { RecipeService } from '../recipes/services/recipe-service'
 
+/**
+ * Recipe detail page for the Angular app.
+ */
 @Component({
   standalone: true,
   selector: 'app-recipe-page',
@@ -43,21 +45,15 @@ export class RecipePageComponent {
   private readonly route = inject(ActivatedRoute)
   private readonly recipeService = inject(RecipeService)
 
-  public readonly recipe = toSignal(
+  public readonly recipe = toSignal<RecipeDefinition | null>(
     this.route.paramMap.pipe(
       map((params) => params.get('slug')),
       switchMap((slug) => this.recipeService.getRecipeBySlug(slug ?? ''))
     ),
-    { initialValue: null as RecipeDefinition | null }
+    { initialValue: null }
   )
 
-  public readonly demoMessage = computed(() => {
-    const recipe = this.recipe()
-
-    if (!recipe) {
-      return 'Demo coming soon.'
-    }
-
-    return demoRegistry[recipe.demoKey]
-  })
+  public readonly demoMessage = computed(() =>
+    this.recipeService.getDemoMessage(this.recipe())
+  )
 }

@@ -1,6 +1,9 @@
 import { Component, input } from '@angular/core'
 import { RouterLink } from '@angular/router'
 
+/**
+ * Shared page shell for recipe details.
+ */
 @Component({
   standalone: true,
   selector: 'app-recipe-page-layout',

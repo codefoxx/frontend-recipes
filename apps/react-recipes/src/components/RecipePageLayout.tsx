@@ -7,6 +7,9 @@ type RecipePageLayoutProps = {
   children?: ReactNode
 }
 
+/**
+ * Shared page shell for recipe details.
+ */
 export default function RecipePageLayout({
   title,
   description,

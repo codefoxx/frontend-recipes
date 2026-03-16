@@ -1,8 +1,11 @@
-import { Routes } from '@angular/router'
+import type { Routes } from '@angular/router'
 
 import { HomePageComponent } from '@/app/pages/home-page'
 import { RecipePageComponent } from '@/app/pages/recipe-page'
 
+/**
+ * Route tree shared by the Angular application.
+ */
 export const routes: Routes = [
   {
     path: '',
