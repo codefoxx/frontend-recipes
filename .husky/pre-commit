@@ -1,2 +1,5 @@
 #!/usr/bin/env sh
+set -e
+
 npm --prefix apps/react-recipes exec lint-staged
+npm --prefix apps/angular-recipes run lint

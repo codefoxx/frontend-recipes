@@ -1,12 +1,14 @@
+import type { RecipeDefinition } from '@shared/types'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
+import RecipePageLayout from '@/components/RecipePageLayout'
 import RecipeSection from '@/components/RecipeSection'
-import { recipeContentProvider } from '@/recipes/providers'
-import RecipePageLayout from '@/recipes/RecipePageLayout'
-import { demoRegistry } from '@/recipes/registry/demoRegistry'
-import type { RecipeDefinition } from '@/recipes/types/RecipeDefinition'
+import { recipeService } from '@/recipes/services'
 
+/**
+ * Recipe detail page for the React app.
+ */
 export default function RecipePage() {
   const { slug } = useParams<{ slug: string }>()
   const [recipe, setRecipe] = useState<RecipeDefinition | null>(null)
@@ -16,14 +18,14 @@ export default function RecipePage() {
       return
     }
 
-    recipeContentProvider.getRecipeBySlug(slug).then(setRecipe)
+    recipeService.getRecipeBySlug(slug).then(setRecipe)
   }, [slug])
 
   if (!recipe) {
     return <p>Loading recipe...</p>
   }
 
-  const DemoComponent = demoRegistry[recipe.demoKey]
+  const DemoComponent = recipeService.getDemoComponent(recipe)
 
   return (
     <RecipePageLayout title={recipe.title} description={recipe.summary}>

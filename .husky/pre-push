@@ -1,5 +1,12 @@
 #!/usr/bin/env sh
+set -e
 
-npm --prefix apps/react-recipes run lint &&
-npm --prefix apps/react-recipes run format:check &&
+npm --prefix apps/react-recipes run lint
+npm --prefix apps/react-recipes run format:check
+npm --prefix apps/react-recipes run typecheck
 npm --prefix apps/react-recipes run build
+
+npm --prefix apps/angular-recipes run lint
+npm --prefix apps/angular-recipes run format:check
+npm --prefix apps/angular-recipes run typecheck
+npm --prefix apps/angular-recipes run build

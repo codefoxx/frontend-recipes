@@ -1,19 +1,33 @@
-# React Recipes App
+# React Recipes
 
-This app contains the current React + TypeScript implementation of the frontend recipes.
+React implementation of the Frontend Recipes repository.
 
-## Purpose
+## Architecture
 
-The goal is to provide executable examples for recurring frontend problems such as:
+The React app follows this flow:
 
-- debounced search
-- protected routes
-- permission-based UI
-
-## Development
-
-Install dependencies:
-
-```bash
-npm install
+```text
+page → service → content provider → shared recipe content
 ```
+
+Main concepts:
+
+- **pages/** own route-level UI
+- **components/** own reusable page building blocks
+- **recipes/services/** provide a thin UI-facing façade
+- **recipes/providers/** encapsulate access to shared recipe content
+- **recipes/registry/** resolves framework-specific demo components
+
+## Scripts
+
+- `npm run dev` starts the Vite dev server
+- `npm run build` runs TypeScript build checks and creates a production bundle
+- `npm run lint` runs ESLint
+- `npm run format` formats the project with Prettier
+- `npm run format:check` verifies formatting
+- `npm run preview` previews the production build locally
+
+## Notes
+
+The React app currently contains the most complete interactive demo:
+`debounced-search`.

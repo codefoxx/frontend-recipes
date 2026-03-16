@@ -1,11 +1,16 @@
+import type { RecipeSectionDefinition } from '@shared/types'
+import type { ReactNode } from 'react'
+
 import MarkdownContent from '@/components/MarkdownContent'
-import type { RecipeSectionDefinition } from '@/recipes/types/RecipeSectionDefinition'
 
 type RecipeSectionProps = {
   section: RecipeSectionDefinition
-  children?: React.ReactNode
+  children?: ReactNode
 }
 
+/**
+ * Renders a single recipe section and optionally hosts a demo component.
+ */
 export default function RecipeSection({
   section,
   children,
